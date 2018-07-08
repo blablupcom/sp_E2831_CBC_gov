@@ -101,6 +101,7 @@ soup = BeautifulSoup(html.text, 'lxml')
 
 blocks = soup.find('div', attrs = {'class': 'view-content'}).find_all('a')
 for block in blocks:
+    print block['href']
     if 'http' not in block['href']:
         year_url = 'https://www.corby.gov.uk' + block['href']
     else:
