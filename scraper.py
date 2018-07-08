@@ -99,7 +99,7 @@ soup = BeautifulSoup(html.text, 'lxml')
 
 #### SCRAPE DATA
 
-blocks = soup.find('div', attrs = {'class': 'view-content'}).find_all('a')
+blocks = soup.find('section', id="block-views-child-pages-block").find('div', attrs = {'class': 'view-content'}).find_all('a')
 for block in blocks:
     print block['href']
     if 'http' not in block['href']:
